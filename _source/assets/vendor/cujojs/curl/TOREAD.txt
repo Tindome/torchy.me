@@ -1,0 +1,21 @@
+Module non utilisé car vraissemblablement il demande une specification AMD pour tous les javascript
+
+voilà ce qu'on peut toutefois écrire
+
+<script type="text/javascript">
+$(document)
+    .ready(function() {
+    });
+
+curl({
+       baseUrl: '/assets/vendor/',
+       pluginPath: '/assets/vendor/cujojs/curl/js/plugins',})
+    // load our non-module javascript and css
+    .next(['js!libs/jQuery1.6/jQuery.js!order', 'js!libs/jQueryUI1.3/jQueryUI.js!order', 'link!css/screen.css'])
+    // load our bootstrap module and wait for dom-ready
+    .next(['mylib/boot', 'domReady!'], function (boot) {
+        // go!
+        boot.init();
+    });
+
+</script>

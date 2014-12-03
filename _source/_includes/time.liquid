@@ -1,0 +1,14 @@
+<!-- time.liquid -->
+<!-- based on https://github.com/google/WebFundamentals/blob/master/src/site/_includes/time.liquid -->
+  <div class="content">
+    <div class="container">
+      {% if page.article.updated_on %}
+        Updated on {{ page.article.updated_on }}
+      {% else %}
+        {% if page.article.written_on %}
+          Written on {{ page.article.written_on }}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+<!--/time.liquid-->

@@ -1,0 +1,13 @@
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+#Folders to ignore
+node_modules
+_deploy
+
+#Files to ignore
+Gemfile.lock

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="content doc-docs-container{% if page.photo_url %} photo-post{% endif %}">
+  <div class="row">
+    <div class="post single">
+      {% unless page.photo_url %}
+      <h1>{{ page.title }}</h1>
+      <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+        {{ page.date | date: "%b %d, %Y" }}
+      </info>
+      {% endunless %}
+      <div class="body">{{ content }}</div>
+      <!-- <div class="breaker"></div> -->
+      <div class="breaker"></div>
+      <!-- <info class="after">
+  <div class="fb-like" data-href="http://rsms.me{{ page.url }}" data-send="false" data-width="550" data-show-faces="false" data-font="arial"></div>
+      </info> -->
+
+      {% include time.liquid %}
+      
+      <info class="after">
+        {% if page.social_share %}
+          {% include social_plug.html %}
+        {% endif %}
+      </info>
+
+    {% if page.disqus_comments %}
+      {% include disqus.html %}
+    {% endif %}
+
+
+    </div>
+  </div>
+</div>

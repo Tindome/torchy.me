@@ -1,0 +1,193 @@
+<html>
+<!--jekyll.layout : default.html -->
+<head>
+	<meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} &mdash; {% endif %}TORCHY.ME</title>
+  {% if page.title != "Archive (sidebar)" %}<meta name="viewport" content="width=device-width, initial-scale=1">{% endif %} <!-- 2014-06-12 note.stt verifier a quoi cela sert -->
+ 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+  <!--<link rel="stylesheet" type="text/css" href="assets/semantic/packaged/css/semantic.css"> utilise la totale-->
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/collections/grid.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/collections/menu.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/elements/segment.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/elements/icon.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/elements/label.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/views/list.min.css">
+  <!--Scripts-->
+
+ 
+  <script src="/assets/mithril/js/mithril.min.js"></script> 
+  <script src="/assets/requireJS/js/require.min.js"></script>
+  <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!--Modules-->
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/modules/dropdown.min.css">
+  <script src="/assets/vendor/semantic/minified/modules/dropdown.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/modules/popup.min.css">
+  <script src="/assets/vendor/semantic/minified/modules/popup.min.js"></script>
+  <!--module experimental -->
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/semantic/minified/modules/sticky.min.css">
+  <!--<script src="/assets/vendor/semantic/minified/modules/sticky.min.js"></script>-->
+  <script src="/assets/vendor/semantic/uncompressed/modules/sticky.js"></script>
+
+  <style>
+
+
+  html, body {
+    height: 100%;
+    font-size: 15px;
+  }
+
+  html, body {
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+    font-size: 13;
+    background-color: #FCFCFC;
+    background-color: orange;
+    color: #555555;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  }
+
+  .ui > .row >.column > h5 {font-size: 1.4em;}
+  li > a {text-decoration: none;}
+
+
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+     margin-bottom: -280px; 
+  }
+
+  .page-wrap:after {
+  content: "";
+  display: block;
+  }
+  .site-footer, .page-wrap:after {
+    /* .push must be the same height as footer */
+    height: 200px; 
+  }
+  .site-footer {
+    background: orange;
+  }
+
+  .list-unstyled{ list-style: none;}
+
+  </style>
+
+{%comment%}
+  <style>
+  .ui.content {
+    transform: rotateZ(0deg);
+    overflow: scroll;
+  }
+  /* fixed will stay in its current offset relative to the parent container */
+  .fixed.thingy {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: red;
+  }
+  </style>
+  {%endcomment%}
+  <script type="text/javascript">
+  $(document)
+      .ready(function() {
+          $('.ui.dropdown').dropdown();
+          $('.icon').popup();
+          $('.ui.sticky').sticky({ context: ".page-wrap", verbose: true, debug: true, performance: true});
+      });
+  </script>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="ui sticky">
+      {% include top_menu.html %}
+    </div>
+
+    <div class="ui inverted segment">
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, unde, mollitia officia laudantium aliquam odit voluptas fugiat est consequatur animi adipisci assumenda voluptatum nobis doloribus omnis architecto consectetur non provident.</div>
+      <div>Voluptas, tenetur, autem, officiis magnam adipisci iure quaerat minus delectus voluptatum praesentium dolorem facilis sit ea mollitia possimus dignissimos cumque consequuntur dolore expedita accusantium obcaecati impedit ad eveniet debitis in.</div>
+      <div>Totam, quam, reiciendis, reprehenderit, nostrum suscipit dolorem sequi quibusdam dicta accusantium facilis repellat quo labore non asperiores ex laborum provident aliquid eaque atque est. Esse tenetur et culpa iste perferendis.</div>
+      <div>Dolores, mollitia, iste at ullam molestias enim deleniti tempora sit itaque explicabo optio repudiandae a consequatur dolor minus omnis vitae. Cupiditate quam illo aut distinctio vel aperiam ratione modi. Architecto.</div>
+      <div>Voluptate, veritatis, qui cum commodi accusamus assumenda saepe odio corrupti vel sunt similique nostrum fugiat voluptatibus reprehenderit nam. Deserunt, unde consequuntur eligendi quasi laboriosam ullam facere quidem fugit at ipsa!</div>
+      <div>Quam, sed, officiis, praesentium dolorem culpa tempore explicabo nobis maxime cupiditate provident mollitia facere qui a illo accusamus omnis voluptatibus ab quasi distinctio at? Error, ducimus illo quis accusamus sint!</div>
+      <div>Sapiente, minima, ut, repellendus magnam quaerat porro explicabo necessitatibus veritatis odio animi iste ullam reiciendis. Dolorum, asperiores maxime corrupti vel delectus ducimus natus libero doloribus nam enim. Ullam, est, ea.</div>
+      </div>
+    </div>
+
+    <div class="ui inverted segment">
+      {{ content }}
+    </div>
+
+    {% include analytics.html %}
+
+  </div>
+  {% unless page.no_footer %}
+    <!-- How do i nested grid ...... https://github.com/Semantic-Org/Semantic-UI/issues/772 -->
+  <div class="site-footer inverted segment ui column divied grid">
+    <div class="row">
+      <div class="three wide column">
+        <h5>Derniers articles <a href="http://www.cssawards.net/nominees" class="pull-right btn btn-outlined btn-sm hidden-xs">Vote</a></h5>
+        <ul class="list-unstyled">
+            <li>Web Design Company – Night Owl <a href="http://www.cssawards.net/nominee/web-design-company-night-owl/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.nightowlinteractive.com">vote</a></li>
+            <li>Relio: Your personal Sun <a href="http://www.cssawards.net/nominee/relio-your-personal-sun/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.relio.it/">vote</a></li>
+            <li>Makform — model workshop <a href="http://www.cssawards.net/nominee/makform-model-workshop/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.makform.ru/">vote</a></li>
+            <li>ceruza <a href="http://www.cssawards.net/nominee/ceruza/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.ceruza.sk/en/">vote</a></li>
+            <li>The Business of Web Design <a href="http://www.cssawards.net/nominee/the-business-of-web-design/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://2014.thebusinessofwebdesign.co.uk">vote</a></li>
+        </ul>
+      </div>
+        <div class="three wide column">
+        <h5>Latest Submissions </h5>
+        <ul class="list-unstyled">
+            <li>New Minimal &amp; responsive websi <a href="http://www.webds.com.ar" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://www.webds.com.ar">visit</a></li>
+            <li>Stream Magazine <a href="http://tinyurl.com/qf7o4yf" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://tinyurl.com/qf7o4yf">visit</a></li>
+            <li>I AM PRINCE <a href="http://iam.princetennis.com" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://iam.princetennis.com">visit</a></li>
+            <li>Matt Hillman Portfolio Site <a href="http://www.matthillman.co.uk" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://www.matthillman.co.uk">visit</a></li>
+            <li>Red Square Gaming <a href="http://redsquaregaming.com" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://redsquaregaming.com">visit</a></li>
+        </ul>
+      </div>
+      <div class="ui three wide column divided grid">
+          <h5>Statistics</h5>
+          <div class="row">
+            <div class="two wide column"><p class="ui red label">Nombre de page</p></div>
+            <div class="column">{{site.page}}</div>
+          </div>   
+          <div class="row">
+            <div class="column"><p class="ui red label">Generator</p></div>
+            <div class="column">Jekyll v.101</div>
+          </div> 
+          <div class="row">
+            <div class="column"><p class="ui red label">Last Compilation</p></div>
+            <div class="column">{{ site.time | date_to_long_string }}</div>
+          </div>
+      </div>
+      <div class="one wide column">
+        <h5>Social</h5>
+        <ul class="list-unstyled">
+          <li><a href="http://www.facebook.com/cssawards"><i class="facebook icon circular red inverted" data-content="Like us."></i></a></li>
+          <li><a href="http://www.twitter.com/cssawards"><i class="twitter icon circular red inverted" data-content="Follow us"></i></a></li>
+          <li><a href="http://www.pinterest.com/cssawards"><i class="pinterest icon circular red inverted" data-content="Pin it"></i></a></li>
+          <li><a href="http://feeds.feedburner.com/cssawardswebsites"><i class="rss icon circular red inverted" data-content="Subscribe"></i></a></li>
+        </ul>
+      </div>
+      <div class="five wide column">
+        <h5>Torchy.me</h5>
+        <p>Torchy.me is a personal site, so ideas or opinions exprimed here engage only the writer not the firm they working for.</p>
+        <p><small><a href="#">Privacy Policy</a></p>
+        <p><small>© 2014 Torchy.me. All Rights Reserved. All screenshots © their respective owners. <a href="http://www.torchy.me/sitemap.xml">Sitemap</a></small></p>
+        <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+        </p>
+      </div>     
+    </div>
+  </div> 
+  {% endunless %}
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!-- modules/toc.liquid -->
+<!-- based on https://github.com/google/WebFundamentals/blob/master/src/site/_includes/modules/toc.liquid -->
+<div class="toc" markdown="1">
+
+{%if {include.title} %}
+  <h3 class="toc__title">{{include.title}}</h3>
+{% else %}
+  <h3 class="toc__title">Dans ce Billet</h3>
+{% endif %}
+  1. Table of Contents
+  {:toc .toc__list .list-anchor #toc}
+</div>
+<!-- modules/toc.liquid -->

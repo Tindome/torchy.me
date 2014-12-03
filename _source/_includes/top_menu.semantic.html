@@ -1,0 +1,25 @@
+<!--jekyll.includes : top_menu.html -->
+<div class="ui inverted menu">
+  <a class="item {%if page.url == "/index.html" %}active{%endif%}" href="/index.html">
+    <i class="home icon"></i><a >Torchy.me</a>
+  </a>
+  <a class="item {%if page.url contains "/blog/" %}active{%endif%}" href="/blog/index.html">
+    <i class="mail icon"></i>Blog
+  </a>
+  <a class="item {%if page.url contains "/articles/" %}active{%endif%}" href="/articles/index.html">
+    <i class="archive icon"></i>Articles
+  </a>
+  <a class="item {%if page.url contains "/projects/" %}active{%endif%}" href="/projects/index.html">
+    <i class="folder icon"></i>Projets
+  </a>
+  <div class="ui dropdown item">
+  A propos de <i class="icon dropdown"></i>
+        <div class="menu">
+          <a class="item {%if page.url contains "/about/stephane/" %}active{%endif%}" href="/about/stephane/stt_index.html"><i class="info icon"></i> Stéphane</a>
+          <a class="item"><i class="info icon"></i> Jérôme</a>
+          <a class="item"><i class="info icon"></i> Sebastien</a>
+        </div>
+  </div>
+</div>
+
+<!-- debug page.url {{page.url}} -->

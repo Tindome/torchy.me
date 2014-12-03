@@ -1,0 +1,49 @@
+<style>
+  .share.share-facebook {
+  color: #3b5798;
+  }
+  .share.share-twitter {
+  color: #40b7d7;
+  }
+  .share.share-google {
+  color: #d64937;
+  }
+  .share {
+  color: #40b7d7;
+  font-size: 1rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  }
+</style>
+
+
+<div>
+  Partager sur <a class="share share-facebook" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}/{{ page.url }}" onclick="window.open(this.href, '',
+  'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+  target="_blank" title="Partager sur Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}/{{ page.url }}">Facebook
+  </a>
+
+  <a class="share share-twitter" ng-href="http://www.twitter.com/share?url={{ site.url }}/{{ page.url }}" onclick="window.open(this.href, '',
+  'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=320,width=600');return false;"
+  target="_blank" title="Partager sur Twitter" href="http://www.twitter.com/share?url={{ site.url }}/{{ page.url }}">Twitter</a>
+
+  <a class="share share-google" ng-href="https://plus.google.com/share?url={{ site.url }}/{{ page.url }}" onclick="window.open(this.href, '',
+  'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+  target="_blank" title="Partager sur Google +" href="https://plus.google.com/share?url={{ site.url }}/{{ page.url }}">Google+
+  </a>
+
+  <!--      <a class="share share-linkedin" ng-href="http://www.linkedin.com/shareArticle?mini=true&url={{url|escape}}&title={{title|escape}}"-->
+  <!--         onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"-->
+  <!--         target="_blank" title="Share on Linkedin">Linkedin-->
+  <!--      </a>-->
+
+  <!--      <a class="share share-pinterest"
+  ng-href="http://pinterest.com/pin/create/button/?url={{url|escape}}&media={{icon.previewPng|escape}}&description={{title|escape}}"-->
+  <!--         onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=320,width=600');return false;"-->
+  <!--         target="_blank" title="Share on Pinterest">Pinterest-->
+  <!--      </a>-->
+  </div>
+
+<img src="http://i.imgur.com/wWzX9uB.png (twitter icon without padding)" class="red">
+<i class="fa fa-facebook share share-facebook "></i>
+

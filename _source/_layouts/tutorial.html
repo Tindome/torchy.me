@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="content doc-docs-container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post single">
+        <h1>{{ page.title }}</h1>
+        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+          {{ page.date | date: "%b %d, %Y" }}
+        </info>
+        <div class="body">{{ content }}</div>
+        <!-- <div class="breaker"></div> -->
+        <div class="breaker"></div>
+        <!-- <info class="after">
+    <div class="fb-like" data-href="http://rsms.me{{ page.url }}" data-send="false" data-width="550" data-show-faces="false" data-font="arial"></div>
+        </info> -->
+
+      {% if page.disqus_comments %}
+        {% include disqus.html %}
+      {% endif %}
+      </div>
+    </div>
+    <div class="col-md-3">
+      <ul class="nav bs-docs-sidenav">
+        <li class="active">
+          <a href="#installation">Installation</a>
+            <ul class="nav">
+              <li class=""><a href="#overview-doctype">HTML5 doctype</a></li>
+              <li class=""><a href="#overview-mobile">Mobile first</a></li>
+              <li class=""><a href="#overview-type-links">Typography and links</a></li>
+              <li class=""><a href="#overview-normalize">Normalize.css</a></li>
+              <li class=""><a href="#overview-container">Containers</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

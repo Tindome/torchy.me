@@ -1,0 +1,14 @@
+/**
+ *
+ */
+
+ .slide {height: 800px;font-size: 22px;line-height: 25px;}
+ .cv {font-size: 26px;}
+ .cv ul {font-size: 20px; line-height: 20px;list-style-type: disc;padding-left: 0;}
+ .title {font-size: 30px; text-align: right;}
+ .row > .col-lg-3 {font-size: 26px;}
+
+/* debug
+p:after{content: "...Chrome guessed";}
+ .slide{color: blue; }
+ */

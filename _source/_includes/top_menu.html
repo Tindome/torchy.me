@@ -1,0 +1,191 @@
+<!--jekyll.includes : top_menu.html -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/index.html">Torchy.me</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="{%if page.url == "/index.html" %}active{%endif%}"><a href="/index.html">Home</a></li>
+        <li class="{%if page.url == "/articles/" %}active{%endif%}"><a href="/articles/index.html">Articles</a></li>
+        <li class="{%if page.url == "/blog/" %}active{%endif%}"><a href="/blog/index.html">Blog</a></li>
+        <li class="{%if page.url == "/projects/" %}active{%endif%}"><a href="/projects/index.html">Projects</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle {%if page.url contains "/about" %}active{%endif%}" data-toggle="dropdown">A propos <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="{%if page.url contains "/about/stephane/" %}active{%endif%}"><a href="/about/stephane/stt_index.html">Stéphane</a></li>
+            <li class="{%if page.url contains "/about/jerome/" %}active{%endif%}"><a href="/about/jerome/jt_index.html">Jérôme</a></li>
+            <li class="{%if page.url contains "/about/sebastien/" %}active{%endif%}"><a href="/about/sebastien/seb_index.html">Sebastien</a></li>
+            {%comment%}
+            <li class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+            {%endcomment%}
+          </ul>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:void(0)" id="filter-nav"><i class="fa fa-search"></i></a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!--<li><a href="http://www.torchy.me/login"><i class="fa fa-user"></i></a></li>-->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<style>
+/**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+.headroom {
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+.animated {-webkit-animation-duration:.5s;-moz-animation-duration:.5s;-o-animation-duration:.5s;animation-duration:.5s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}
+@-webkit-keyframes slideDown {0% {-webkit-transform:translateY(-100%)}
+100% {-webkit-transform:translateY(0)}
+}
+@-moz-keyframes slideDown {0% {-moz-transform:translateY(-100%)}
+100% {-moz-transform:translateY(0)}
+}
+@-o-keyframes slideDown {0% {-o-transform:translateY(-100%)}
+100% {-o-transform:translateY(0)}
+}
+@keyframes slideDown {0% {transform:translateY(-100%)}
+100% {transform:translateY(0)}
+}
+.animated.slideDown {-webkit-animation-name:slideDown;-moz-animation-name:slideDown;-o-animation-name:slideDown;animation-name:slideDown}
+@-webkit-keyframes slideUp {0% {-webkit-transform:translateY(0)}
+100% {-webkit-transform:translateY(-100%)}
+}
+@-moz-keyframes slideUp {0% {-moz-transform:translateY(0)}
+100% {-moz-transform:translateY(-100%)}
+}
+@-o-keyframes slideUp {0% {-o-transform:translateY(0)}
+100% {-o-transform:translateY(-100%)}
+}
+@keyframes slideUp {0% {transform:translateY(0)}
+100% {transform:translateY(-100%)}
+}
+.animated.slideUp {-webkit-animation-name:slideUp;-moz-animation-name:slideUp;-o-animation-name:slideUp;animation-name:slideUp}
+@-webkit-keyframes swingInX {0% {-webkit-transform:perspective(400px) rotateX(-90deg)}
+100% {-webkit-transform:perspective(400px) rotateX(0deg)}
+}
+@-moz-keyframes swingInX {0% {-moz-transform:perspective(400px) rotateX(-90deg)}
+100% {-moz-transform:perspective(400px) rotateX(0deg)}
+}
+@-o-keyframes swingInX {0% {-o-transform:perspective(400px) rotateX(-90deg)}
+100% {-o-transform:perspective(400px) rotateX(0deg)}
+}
+@keyframes swingInX {0% {transform:perspective(400px) rotateX(-90deg)}
+100% {transform:perspective(400px) rotateX(0deg)}
+}
+.animated.swingInX {-webkit-transform-origin:top;-moz-transform-origin:top;-ie-transform-origin:top;-o-transform-origin:top;transform-origin:top;-webkit-backface-visibility:visible!important;-webkit-animation-name:swingInX;-moz-backface-visibility:visible!important;-moz-animation-name:swingInX;-o-backface-visibility:visible!important;-o-animation-name:swingInX;backface-visibility:visible!important;animation-name:swingInX}
+@-webkit-keyframes swingOutX {0% {-webkit-transform:perspective(400px) rotateX(0deg)}
+100% {-webkit-transform:perspective(400px) rotateX(-90deg)}
+}
+@-moz-keyframes swingOutX {0% {-moz-transform:perspective(400px) rotateX(0deg)}
+100% {-moz-transform:perspective(400px) rotateX(-90deg)}
+}
+@-o-keyframes swingOutX {0% {-o-transform:perspective(400px) rotateX(0deg)}
+100% {-o-transform:perspective(400px) rotateX(-90deg)}
+}
+@keyframes swingOutX {0% {transform:perspective(400px) rotateX(0deg)}
+100% {transform:perspective(400px) rotateX(-90deg)}
+}
+.animated.swingOutX {-webkit-transform-origin:top;-webkit-animation-name:swingOutX;-webkit-backface-visibility:visible!important;-moz-animation-name:swingOutX;-moz-backface-visibility:visible!important;-o-animation-name:swingOutX;-o-backface-visibility:visible!important;animation-name:swingOutX;backface-visibility:visible!important}
+@-webkit-keyframes flipInX {0% {-webkit-transform:perspective(400px) rotateX(90deg);opacity:0}
+100% {-webkit-transform:perspective(400px) rotateX(0deg);opacity:1}
+}
+@-moz-keyframes flipInX {0% {-moz-transform:perspective(400px) rotateX(90deg);opacity:0}
+100% {-moz-transform:perspective(400px) rotateX(0deg);opacity:1}
+}
+@-o-keyframes flipInX {0% {-o-transform:perspective(400px) rotateX(90deg);opacity:0}
+100% {-o-transform:perspective(400px) rotateX(0deg);opacity:1}
+}
+@keyframes flipInX {0% {transform:perspective(400px) rotateX(90deg);opacity:0}
+100% {transform:perspective(400px) rotateX(0deg);opacity:1}
+}
+.animated.flipInX {-webkit-backface-visibility:visible!important;-webkit-animation-name:flipInX;-moz-backface-visibility:visible!important;-moz-animation-name:flipInX;-o-backface-visibility:visible!important;-o-animation-name:flipInX;backface-visibility:visible!important;animation-name:flipInX}
+@-webkit-keyframes flipOutX {0% {-webkit-transform:perspective(400px) rotateX(0deg);opacity:1}
+100% {-webkit-transform:perspective(400px) rotateX(90deg);opacity:0}
+}
+@-moz-keyframes flipOutX {0% {-moz-transform:perspective(400px) rotateX(0deg);opacity:1}
+100% {-moz-transform:perspective(400px) rotateX(90deg);opacity:0}
+}
+@-o-keyframes flipOutX {0% {-o-transform:perspective(400px) rotateX(0deg);opacity:1}
+100% {-o-transform:perspective(400px) rotateX(90deg);opacity:0}
+}
+@keyframes flipOutX {0% {transform:perspective(400px) rotateX(0deg);opacity:1}
+100% {transform:perspective(400px) rotateX(90deg);opacity:0}
+}
+.animated.flipOutX {-webkit-animation-name:flipOutX;-webkit-backface-visibility:visible!important;-moz-animation-name:flipOutX;-moz-backface-visibility:visible!important;-o-animation-name:flipOutX;-o-backface-visibility:visible!important;animation-name:flipOutX;backface-visibility:visible!important}
+@-webkit-keyframes bounceInDown {0% {opacity:0;-webkit-transform:translateY(-200px)}
+60% {opacity:1;-webkit-transform:translateY(30px)}
+80% {-webkit-transform:translateY(-10px)}
+100% {-webkit-transform:translateY(0)}
+}
+@-moz-keyframes bounceInDown {0% {opacity:0;-moz-transform:translateY(-200px)}
+60% {opacity:1;-moz-transform:translateY(30px)}
+80% {-moz-transform:translateY(-10px)}
+100% {-moz-transform:translateY(0)}
+}
+@-o-keyframes bounceInDown {0% {opacity:0;-o-transform:translateY(-200px)}
+60% {opacity:1;-o-transform:translateY(30px)}
+80% {-o-transform:translateY(-10px)}
+100% {-o-transform:translateY(0)}
+}
+@keyframes bounceInDown {0% {opacity:0;transform:translateY(-200px)}
+60% {opacity:1;transform:translateY(30px)}
+80% {transform:translateY(-10px)}
+100% {transform:translateY(0)}
+}
+.animated.bounceInDown {-webkit-animation-name:bounceInDown;-moz-animation-name:bounceInDown;-o-animation-name:bounceInDown;animation-name:bounceInDown}
+@-webkit-keyframes bounceOutUp {0% {-webkit-transform:translateY(0)}
+30% {opacity:1;-webkit-transform:translateY(20px)}
+100% {opacity:0;-webkit-transform:translateY(-200px)}
+}
+@-moz-keyframes bounceOutUp {0% {-moz-transform:translateY(0)}
+30% {opacity:1;-moz-transform:translateY(20px)}
+100% {opacity:0;-moz-transform:translateY(-200px)}
+}
+@-o-keyframes bounceOutUp {0% {-o-transform:translateY(0)}
+30% {opacity:1;-o-transform:translateY(20px)}
+100% {opacity:0;-o-transform:translateY(-200px)}
+}
+@keyframes bounceOutUp {0% {transform:translateY(0)}
+30% {opacity:1;transform:translateY(20px)}
+100% {opacity:0;transform:translateY(-200px)}
+}
+.animated.bounceOutUp {-webkit-animation-name:bounceOutUp;-moz-animation-name:bounceOutUp;-o-animation-name:bounceOutUp;animation-name:bounceOutUp}
+</style>
+
+
+<script type="text/javascript">
+var headroom_start = function() {
+  // grab an element
+  var myElement = document.querySelector("#nav");
+  // construct an instance of Headroom, passing the element
+  var headroom  = new Headroom(myElement);
+  // initialise
+  headroom.init();
+}
+
+loadScript("/assets/vendor/headroom/js/headroom.min.js", headroom_start);
+
+</script>

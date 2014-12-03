@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="/assets/mithril/js/mithril.min.js"></script> 
+  <script src="/assets/requireJS/js/require.min.js"></script>
+  <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	{{content}}
+
+  {% if site.host == '0.0.0.0' %}
+<h2>Mode debug</h2>
+  {{site.time}}
+  <ul>
+  {% for subpage in site.pages %}
+  <li>{{subpage.url}}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+
+  <footer>
+
+
+    <div class="">Taille de la fenetre width:<span>
+    <script type="text/javascript">document.write(document.documentElement.clientWidth);</script>
+    </span>height:<span>
+    <script type="text/javascript">document.write(document.documentElement.clientHeight);</script>
+    </span></div>
+    <script>
+
+
+      $(document)
+        .ready(function() {
+            console.log($(window).height());
+        });
+
+      $(window).load(function() {
+            console.log($(window).height());
+        });
+    </script>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+---
+layout: default
+title: about-Stéphane
+no_footer: true
+---
+
+{% comment %}
+history : 1.01 18/07/2014 - remove mithril
+							 						- remove RequireJS
+							 						+ use YesNope
+
+{% endcomment %}
+
+<style>
+
+
+	/* defaut Moz */
+	/*@media screen and (min-height:650px) { p:after{content: "...Mozilla guessed";}}*/
+	/* plein ecran chrome */
+	@media screen and (min-height: 959px) {}
+	@media all and (min-height: 700px){.slide{color: red;} }
+	@media screen (min-height: 750px) and (max-height: 800px) {.slide{color: red; height: 680px;} }    /* plein ecran mozilla defaut IE*/
+	@media (min-height: 800px){.slide{color: orange;} }    /* plein ecran  avec barre menu mozilla */
+	@media (min-height: 850px){.slide{color: yellow;} }    /* plein ecran mozilla,ie */
+	@media (min-height: 900px){.slide{color: black;} }
+	@media screen and (min-height: 1000px){.slide{color: maroon;} } /* plein ecran chrome */
+
+
+
+
+/*
+debug @media all and (min-height: 959px) {  .slide{background: maroon;}}
+@media(min-height: 959px){
+  p:after{
+    content:"959px";
+  }
+ plus de test interessant ici http://codepen.io/giodif/pen/LjwFi article ici http://unmatchedstyle.com/news/height-based-media-queries.php
+ */
+</style>
+
+{% comment %}
+<script type="text/javascript">
+m.render(document.head, [m("link[href='/assets/vendor/jmpress/impress.css'][type='text/css'][rel='stylesheet']")]);
+/*require(['/assets/vendor/jmpress/jmpress.custom.js'], function() {$('#impress').jmpress();});*/
+require.config({
+    paths: {
+        jmpress: '/assets/vendor/jmpress/jmpress.custom'
+    }
+});
+require(['jmpress'], function() {$('#impress').jmpress();});
+</script>
+
+{% endcomment %}
+
+
+<script type="text/javascript">
+
+yepnope.injectJs("/assets/vendor/jmpress/jmpress.custom.js", function () {$('#impress').jmpress();},{charset: "utf-8"},5000);
+yepnope.injectCss("/assets/vendor/jmpress/impress.css?version=1.00", function () {},{media: "screen"},5000);
+yepnope.injectCss("/assets/css/slide.css?version=1.00", function () {},{media: "screen"},5000);
+
+
+enquire
+.register("screen and (min-height:650px)", {
+    deferSetup : true,	/* ensure that we execute AJAX request just once, the first time the media query is matched!*/
+    setup : function() {
+			yepnope.injectCss("/assets/css/slide_h650px.css?version=1.00", function () {
+			console.log("css slide_h650px injected!");
+			}, {
+			media: "screen"
+			}, 5000);
+		}
+})
+.register("screen and (min-height:959px)", {
+		deferSetup : true,	/* ensure that we execute AJAX request just once, the first time the media query is matched!*/
+		setup : function() {
+			yepnope.injectCss("/assets/css/slide_h959px.css?version=1.00", function () {
+			console.log("css slide_h959px injected !");
+			}, {
+			media: "screen"
+			}, 5000);
+		}
+});
+
+
+
+</script>
+
+
+
+{%comment%}
+<script src="/assets/vendor/jmpress/jmpress.custom.jsr"></script>
+<%- @getBlock('scripts').add("/assets/vendor/jmpress/jmpress.custom.js").toHTML() %>
+<%- @getBlock('styles').add("/assets/vendor/jmpress/impress.css").toHTML() %>
+{%endcomment%}
+
+
+<div class="container">
+
+	<div id="impress" class="impress-not-supported">
+
+	    <div id="exp" class="step slide" data-x="-1000" data-y="-1500">
+	        <q>Experiences</q>
+	    </div>
+
+	    <div class="step slide" data-x="0" data-y="-1500" data-src="slide1.html">
+	        loading...
+	    </div>
+
+	    <div class="step slide" data-x="1000" data-y="-1500" data-src="slide2.html">
+	        loading...
+	    </div>
+
+	    <div class="step slide" data-x="2000" data-y="-1500" data-src="slide3.html">
+	        loading...
+	    </div>
+
+	    <div class="step slide" data-x="3000" data-y="-1500" data-src="slide4.html">
+	        loading...
+	    </div>
+
+	    <div class="step slide" data-x="4000" data-y="-1500" data-src="slide5.html">
+	        loading...
+	    </div>
+
+	    <div class="step slide" data-x="5000" data-y="-1500" data-src="slide6.html">
+	        loading...
+	    </div>
+
+	    <div class="step slide" data-x="6000" data-y="-1500" data-src="slide7.html">
+	        loading...
+	    </div>
+
+	    <div id="overview" class="step" data-x="3000" data-y="-1500" data-scale="10">
+	    </div>
+
+	    <div id="form" class="step slide" data-x="-1000" data-y="-500">
+	        <q>Formation</q>
+	    </div>
+
+	    <div class="step slide" data-x="0" data-y="-500" data-src="slide8.html">
+	        loading...
+	    </div>
+
+	    <div id="overview" class="step" data-x="3000" data-y="-1500" data-scale="10">
+	    </div>
+
+	    <div id="comp" class="step slide" data-x="-1000" data-y="500">
+	        <q>Compétences</q>
+	    </div>
+
+	    <div class="step slide" data-x="0" data-y="500" data-src="slide9.html">
+	        loading...
+	    </div>
+
+	</div>
+
+	<div class="hint">
+	    <p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+
+</div>

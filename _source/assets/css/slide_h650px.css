@@ -1,0 +1,14 @@
+/**
+ * slide_h650px.css
+ * Mozilla default
+ **/
+
+.title {font-size:30px}
+.slide{height: 580px;font-size: 22px;line-height: 25px;}
+.cv {font-size: 23px;}
+.cv ul {font-size: 15px; line-height: 15px; list-style-type: disc;padding-left: 0;}
+.cv ul {}
+.row > .col-lg-3 {font-size: 24px;}
+/* debug
+ p:after{content: "...Mozilla guessed";}
+ .slide{color: blue; }

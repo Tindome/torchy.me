@@ -1,0 +1,71 @@
+---
+layout: post
+---
+
+<style>
+
+/* --------------------------------------------------------------------------------------------- */
+/* post excerpt */
+/* Wrapped in a div.content.full-bleed */
+
+
+
+.body {
+  line-height: 1.5;
+  font-weight: lighter;
+  margin: 0 auto;
+  width: 100%;
+  }
+.title {font-weight: bold;}
+a.post-excerpt {
+  position: relative;
+  display: block;
+  width: 50%;
+  /* height: 180px; */
+  overflow-y: hidden;
+  float: left;
+  border: none;
+  margin-bottom: 10px;
+  /* background: #eee; */
+  /* -webkit-transform: translate3d(0,0,0);*/
+  text-decoration: none; color: black;
+}
+a.post-excerpt:hover {
+  background: #ccc;
+}
+a.post-excerpt info {
+  display: inline-block;
+  padding-right: 8px;
+  color: #999;
+  font-style: italic;
+  /* margin-bottom: 3em; */
+}
+</style>
+
+<div class="posts">
+  <div class="content full-bleed" id="recent-posts">
+  {% for post in site.posts limit:25 %}
+  <a href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
+      <div class="padded-content">
+        <div class="title">{{ post.title }}</div>
+      {% if post.photo_url %}
+        <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
+      {% else %}
+        <!-- <div class="title">{{ post.title }}</div> -->
+        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+          {{ post.date | date: "%b %Y" }}
+        </info>
+        {% if post.description %}
+        <span class="body">{{ post.description | strip_html }}</span>
+        {% else %}
+        <span class="body">{{ post.excerpt | strip_html }}</span>
+        {% endif %}
+      {% endif %}<!-- post.photo_url -->
+      </div>
+    </a>{% endfor %}
+    <div class="breaker"></div>
+    <div class="end">
+      <a href="/archives/">More...</a>
+    </div>
+  </div>
+</div>

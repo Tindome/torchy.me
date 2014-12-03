@@ -1,0 +1,67 @@
+  <footer class="main site-footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="text-muted"><i>Propulsed by Jekyll</i></p>
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-6">
+            <h5>Latest Posts</h5>
+            <ul class="list-unstyled">
+              {%comment%}
+              <li>Web Design Company – Night Owl <a href="http://www.cssawards.net/nominee/web-design-company-night-owl/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.nightowlinteractive.com">visit</a></li>
+              <li>Relio Your personal Sun <a href="http://www.cssawards.net/nominee/relio-your-personal-sun/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.relio.it/">visit</a></li>
+              <li>Makform — model workshop <a href="http://www.cssawards.net/nominee/makform-model-workshop/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.makform.ru/">visit</a></li>
+              <li>ceruza <a href="http://www.cssawards.net/nominee/ceruza/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://www.ceruza.sk/en/">visit</a></li>
+              <li>The Business of Web Design <a href="http://www.cssawards.net/nominee/the-business-of-web-design/" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="http://2014.thebusinessofwebdesign.co.uk">visit</a></li>
+              {%endcomment%}
+              {% for post in site.posts limit:6 %}
+              <li>{{ post.title|truncate:30 }}<a href="{{post.url}}" class="pull-right" data-toggle="tooltip" data-placement="left" title="{{post.title}}" data-original-title="{{post.url}}">visit</a></li>
+              {%endfor%}
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6">
+            <h5>Latest Projects or Articles</h5>
+            <ul class="list-unstyled">
+              {%comment%}
+              <li>New Minimal &amp; responsive websi <a href="http://www.webds.com.ar" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://www.webds.com.ar">visit</a></li>
+              <li>Stream Magazine <a href="http://tinyurl.com/qf7o4yf" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://tinyurl.com/qf7o4yf">visit</a></li>
+              <li>I AM PRINCE <a href="http://iam.princetennis.com" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://iam.princetennis.com">visit</a></li>
+              <li>Matt Hillman Portfolio Site <a href="http://www.matthillman.co.uk" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://www.matthillman.co.uk">visit</a></li>
+              <li>Red Square Gaming <a href="http://redsquaregaming.com" class="pull-right" data-toggle="tooltip" data-placement="left" title="" target="_blank" data-original-title="http://redsquaregaming.com">visit</a></li>
+              {%endcomment%}
+
+              {% for project in site.data['page_collections']['projects'].pages limit:3 %}
+              <li>{{project.title}}<a href="{{project.url}}" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="{{project.url}}">visit</a></li>
+              {% endfor %}
+
+              {% for article in site.data['page_collections']['articles'].pages limit:3 %}
+              <li>{{article.title}}<a href="{{article.url}}" class="pull-right" data-toggle="tooltip" data-placement="left" title="" data-original-title="{{article.url}}">visit</a></li>
+              {% endfor %}
+
+            </ul>
+          </div>
+          <div class="clearfix visible-xs"></div>
+          <div class="col-md-2 col-sm-3 col-xs-8">
+            <h5>Site Metrics</h5>
+            <ul class="list-unstyled">
+                <li>BootStrap <span class="red pull-right">v 3.1.1</span></li>
+                <li>Jekyll <span class="red pull-right">v 2.03</span></li>
+                <li>Site Build <span class="red pull-right">{{site.time | date_to_string}}</span></li>
+            </ul>
+          </div>
+          <div class="col-md-1 col-sm-1 col-xs-4 follow-us">
+                    <h5>Social</h5>
+                    <ul class="list-unstyled pull-right">
+                        <li><a href="{{site.adress.facebook}}" data-toggle="tooltip" data-placement="right" title="" data-original-title="Like us"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{{site.adress.twitter}}" data-toggle="tooltip" data-placement="right" title="" data-original-title="Follow us"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{site.adress.pinterest}}" data-toggle="tooltip" data-placement="right" title="" data-original-title="Pin it"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="{{site.adress.rss}}" data-toggle="tooltip" data-placement="right" title="" data-original-title="Subscribe"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                </div>
+          <div class="col-md-3 hidden-sm col-xs-12">
+                    <h5>Torchy.me</h5>
+                    <p>Torchy.me is a personal site, so ideas or opinions exprimed here engage only the writers not the firm they working for.</p>
+                     <p><small><a href="#">Privacy Policy</a></p>
+                    <p><small>© 2014 Torchy.me. All Rights Reserved. All screenshots © their respective owners. <a href="/sitemap.xml">Sitemap</a></small></p>
+                </div>
+        </div>
+      </div>
