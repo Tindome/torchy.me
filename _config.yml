@@ -1,0 +1,87 @@
+source:      ./_source
+destination: ./_deploy
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
+exclude:     []
+keep_files:  ['.git','.svn']
+#need the full path from root gems: [./_plugins/page_collections]
+
+markdown: kramdown # advice from GithUb ?
+
+#TimeZone as in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:  Europe/Paris
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+#old : permalink: /:year/:month/:day/:title.html
+permalink:   /:categories/:title/
+
+
+# Build settings
+highlighter: rouge # stt pygments|rouge|null must be set else default pygment applies to posts
+
+#
+url:   http://localhost:4000
+title: Torchy.me
+brandName: Torchy.me™
+
+location: 17,rue condorcet 59290 WASQUEHAL - FRANCE
+email: contact@torchy.me
+email_t: contact at torchy.me
+phone: +33 6 11 XX XX XX
+fax: n/a
+logo: WW-logo_et_texte.png
+#ne pas noter le RA
+addthiskey: ""
+
+
+# Owner/author information
+owner:
+  name:           Your Name
+  avatar:         bio-photo.jpg
+  email:          you@email.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter: 	https://twitter.com/
+  facebook: http://mysite.com
+  github: http://mysite.com
+  stackexchange: http://mysite.com
+  linkedin: http://mysite.com
+  instagram: http://mysite.com
+  flickr: http://mysite.com
+  tumblr: http://mysite.com
+  pinterest: http://mysite.com
+  rss: http://mysite.com
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus: http://mysite.com
+  dribbble: http://mysite.com
+  skype: http://mysite.com
+
+
+page_collections:
+- projects:
+    permalink: /:title/
+- articles:
+    permalink: /:title/
+- miscellaneous:
+    source: _misc
+    permalink: pretty
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+cookies:
+    name: "torchy_registred"
+    default:
+        retention: 90
+    # durée de stockage du cookie cookies_usage
+    cookies_usage:
+        retention: 90
+
+
+version:
+  bootstrap: 3.3.1
+  jekyll : 2.4.0

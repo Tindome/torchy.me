@@ -1,0 +1,135 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+ /**
+  *
+  * version
+  *   1.00 : initial commit
+  *   1.01 : [upd] change Open sans to Roboto in html and body
+  *          [upd] change Source Sans pro to Roboto in h1..h5
+  **/
+  html, body {
+    height: 100%;
+    font-size: 15px;
+    padding-top: 30px; /* menu */
+  }
+
+  html, body {
+    font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+    font-size: 13;
+    background-color: #FCFCFC;
+    color: #555555;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Roboto", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  }
+
+
+ footer {
+    h5 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+      color: #ddd;
+      font-size: 16px;
+    }
+    a {
+      color: #cb2027;
+    }
+  }
+  footer.main {
+    background-color: #111;
+    color: #777;
+    font-size: 13px;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  /* css for sticky footer */
+
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -202px;
+  }
+  .page-wrap:after {
+    content: "";
+    display: block;
+  }
+  .site-footer, .page-wrap:after {
+    /* .push must be the same height as footer */
+    height: 202px;
+  }
+
+  /* end of css for sticky footer */
+  .red {color:red;}
+
+
+
+/**
+
+*/
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+.post {
+  padding: 0;
+  margin-bottom: -50px;
+  position: relative;
+  word-wrap: break-word;
+  @include transition(margin-bottom .2s ease);
+}
+
+
+.link-wrapper {
+  @include font-size(32px);
+  color: #fff;
+}
+.link-wrapper {
+  font-family: 'Raleway', sans-serif;
+
+border-radius: 3px 3px 0 0;
+background-color: #529ecc;
+display: block;
+padding: 0;
+position: relative;
+word-break: break-word;
+word-wrap: break-word;
+text-align: center;
+background-color: #529ECC;
+}
+.chapeau {
+  font-family: 'Josefin Sans', sans-serif;
+  @include font-size(28px);
+}
+
+.panel-body {
+  font-family: 'Roboto','Raleway','Josefin Sans', sans-serif;
+  @include font-size(20px);
+}

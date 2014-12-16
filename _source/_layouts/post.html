@@ -2,6 +2,93 @@
 layout: default
 ---
 
+<div class="container">
+  <div class="row">
+
+    <article class="link not-page post-104851637082" data-post-id="post_104851637082">
+      <section class="post">
+        <div class="title">
+          <div class="link-wrapper">
+            {{page.title}}
+          </div>
+        </div>
+
+        <div class="caption">
+
+        </div>
+
+
+
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">   par {{page.author}}
+                        le
+                        {{ page.date | date: '%d' }}<span>
+                                               {% assign m = page.date | date: "%-m" %}
+                                                    {% case m %}
+                                                      {% when '1' %}JAN
+                                                      {% when '2' %}FEV
+                                                      {% when '3' %}MAR
+                                                      {% when '4' %}AVR
+                                                      {% when '5' %}MAI
+                                                      {% when '6' %}JUI
+                                                      {% when '7' %}JUL
+                                                      {% when '8' %}AOU
+                                                      {% when '9' %}SEP
+                                                      {% when '10' %}OCT
+                                                      {% when '11' %}NOV
+                                                      {% when '12' %}DEC
+                                                    {% endcase %} {{ page.date | date: '%Y' }}</span>
+
+
+                        {% if page.article.updated_on %} maj {{page.article.updated_on}} {%endif%}
+                  </h3>
+
+
+              </div>
+              <div class="panel-body">
+
+                <div class=" bs-callout bs-callout-info chapeau">
+                  {{page.chapeau}}
+                </div>
+
+              {{content}}
+
+              </div>
+
+              <div class="panel-footer">Panel footer
+                <section class="inline-meta post-extra has-tags">
+                  <a class="meta-item tag-link" href="http://dragoni.tumblr.com/tagged/apple">apple</a>
+                  <a class="meta-item tag-link" href="http://dragoni.tumblr.com/tagged/apple-app-store">apple app store</a>
+                  <a class="meta-item tag-link" href="http://dragoni.tumblr.com/tagged/mobile-apps">mobile apps</a>
+                  <a class="meta-item tag-link" href="http://dragoni.tumblr.com/tagged/app-store-revenue">app store revenue</a>
+                  <a class="meta-item tag-link" href="http://dragoni.tumblr.com/tagged/gaming-apps">gaming apps</a>
+                 </section>
+                 <a href="{{ page.url }}" class="post-excerpt{% if page.photo_url %} photo{% endif %}">>>permalink<<</a>
+              </div>
+            </div>
+
+
+
+
+      </section>
+    </article>
+
+
+
+  </div>
+  <br />&nbsp;<br />
+  {% include social_plug.html %}
+  <br />&nbsp;<br />
+  {% include disqus.html %}
+</div>
+<br />&nbsp;<br />
+
+<div class="clear"></div>
+
+
+{%comment%}
+
 <div class="content doc-docs-container{% if page.photo_url %} photo-post{% endif %}">
   <div class="row">
     <div class="post single">
@@ -19,7 +106,7 @@ layout: default
       </info> -->
 
       {% include time.liquid %}
-      
+
       <info class="after">
         {% if page.social_share %}
           {% include social_plug.html %}
@@ -34,3 +121,4 @@ layout: default
     </div>
   </div>
 </div>
+{%endcomment%}

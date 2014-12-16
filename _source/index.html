@@ -3,14 +3,141 @@ layout: default
 title: index
 ---
 
-
-
-<div class="jumbotron">
+{%comment%}
+<div class="content container ">
+      <div class="jumbotron">
 <h1>Bienvenue sur cet espace d'expression</h1>
 
-{{content}}
+
 <p class="lead">
 Avant de vous laisser vous promener sur ce site une petite précision : le blog recense mes billets d'humeur, tandis que les articles sont des articles de fond.
 </p>
 
 </div>
+{%endcomment%}
+
+<div class="container">
+  <div class="row">
+
+    {% for post in site.posts limit:3 %}
+    <article class="link not-page post-104851637082" data-post-id="post_104851637082">
+      <section class="post">
+        <div class="title">
+          <div class="link-wrapper">
+            {{post.title}}
+          </div>
+        </div>
+
+        <div class="caption">
+
+        </div>
+
+
+
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">   par {{post.author}}
+                        le
+                        {{ post.date | date: '%d' }}<span>
+                                               {% assign m = post.date | date: "%-m" %}
+                                                    {% case m %}
+                                                      {% when '1' %}JAN
+                                                      {% when '2' %}FEV
+                                                      {% when '3' %}MAR
+                                                      {% when '4' %}AVR
+                                                      {% when '5' %}MAI
+                                                      {% when '6' %}JUI
+                                                      {% when '7' %}JUL
+                                                      {% when '8' %}AOU
+                                                      {% when '9' %}SEP
+                                                      {% when '10' %}OCT
+                                                      {% when '11' %}NOV
+                                                      {% when '12' %}DEC
+                                                    {% endcase %} {{ post.date | date: '%Y' }}</span>
+
+
+                        {% if post.article.updated_on %} <i>( maj {{post.article.updated_on | date: '%d/%-m/%y'}} ) </i> {%endif%}
+                  </h3>
+
+
+              </div>
+              <div class="panel-body">
+
+                <div class=" bs-callout bs-callout-info chapeau">
+                  {{post.chapeau}}
+                </div>
+
+              {{ post.content }}
+
+              </div>
+
+
+
+              {% if post.tags %}
+              <div class="panel-footer">Tags :
+                <section class="inline-meta post-extra has-tags">
+                  {% for item in post.tags %}
+                  <a class="meta-item tag-link" href="tagged/{{item}}">{{item}}</a>
+                  {% endfor %}
+                 </section>
+                 <a href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">>>permalink<<</a>
+              </div>
+              {%endif%}
+            </div>
+      </section>
+    </article>
+    <br />&nbsp;<br />
+    {% endfor %}
+
+
+  </div>
+  <br />&nbsp;<br />
+  {% include social_plug.html %}
+  <br />&nbsp;<br />
+  {% include disqus.html %}
+</div>
+<br />&nbsp;<br />
+
+<div class="clear"></div>
+
+
+
+
+
+{%comment%}
+POST
+  {% for post in site.posts limit:25 %}<a
+    href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
+	{% endfor %}
+
+{{site.posts}}
+
+<div class="posts">
+  <div class="content full-bleed" id="recent-posts">
+  {% for post in site.posts limit:25 %}<a
+    href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
+      <div class="padded-content">
+        <div class="title">{{ post.title }}</div>
+      {% if post.photo_url %}
+        <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
+      {% else %}
+        <!-- <div class="title">{{ post.title }}</div> -->
+        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+          {{ post.date | date: "%b %Y" }}
+        </info>
+        {% if post.description %}
+        <span class="body">{{ post.description | strip_html }}</span>
+        {% else %}
+        <span class="body">{{ post.excerpt | strip_html }}</span>
+        {% endif %}
+      {% endif %}<!-- post.photo_url -->
+      </div>
+    </a>{% endfor %}
+    <div class="breaker"></div>
+    <div class="end">
+      <a href="/archive/">More...</a>
+    </div>
+  </div>
+</div>
+{%endcomment%}
+
